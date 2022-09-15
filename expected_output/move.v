@@ -1,0 +1,3 @@
+// move
+vars: address otherUsr, uint256 daiSrcBefore, uint256 daiDstBefore, uint256 daiOtherBefore, uint256 daiSrcAfter, uint256 daiDstAfter, uint256 daiOtherAfter
+spec: finished(Vat.move(src, dst, rad), (otherUsr != src && otherUsr != dst) |=> (((daiSrcBefore = old(dai(src))) && (daiDstBefore = old(dai(dst))) && (daiOtherBefore = old(dai(otherUsr))) && (daiSrcAfter = (dai(src))) && (daiDstAfter = (dai(dst))) && (daiOtherAfter = (dai(otherUsr)))) ==> ((src != dst ==> daiSrcAfter = daiSrcBefore - rad) && (src != dst ==> daiDstAfter = daiDstBefore + rad) && (src = dst ==> daiSrcAfter = daiDstBefore) && (daiOtherAfter = daiOtherBefore))))

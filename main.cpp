@@ -38,13 +38,18 @@ int main(int argc, const char *argv[])
     clog << "toV finished." << endl;
     string str;
 
+    std::ofstream ostream;
+
     for (const auto &vspec : e->vspeclist)
     {
+        // str = "";
         vspec->Dump(str);
+        // ostream.open("../expected_output/" + vspec->comment + ".v");
+        // ostream << str;
+        // ostream.close();
         str += "\n\n";
     }
 
-    std::ofstream ostream;
     ostream.open(foutput);
     ostream << str;
 

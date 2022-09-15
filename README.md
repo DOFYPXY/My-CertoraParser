@@ -2,7 +2,7 @@
 
 A Parser form Certora to [V].
 
-It was able to parse and translate all rules in `VAT` except `fallback_revert`, `ilk_getters` and `urn_getters`.
+It was able to parse and translate all rules in `VAT` except for `fallback_revert`, `ilk_getters` and `urn_getters`.
 
 ## Usage
 

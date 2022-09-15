@@ -1,0 +1,3 @@
+// flux_revert_nece
+vars: bool wish, uint256 gemSrc, uint256 gemDst, bool revert1, bool revert2, bool revert3, bool revert4
+spec: finished(Vat.flux(ilk, src, dst, wad), (~(((wish = (src = sender || can(src,sender) = 1)) && (gemSrc = (gem(ilk,src))) && (gemDst = (gem(ilk,dst))) && (revert1 = (value > 0)) && (revert2 = (!wish)) && (revert3 = (gemSrc < wad)) && (revert4 = (src != dst && gemDst + wad > max_uint256))) ==> (revert1 || revert2 || revert3 || revert4))) |=> true)

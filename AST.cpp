@@ -294,7 +294,7 @@ void Env::end_parsing_a_rule()
         vrev->var_decs = var_decs;
         vrev->tx = tx;
         vrev->con = new VBinExpr("==>", reduce(rev_ante, "&&"), reduce(rev_suff, "&&"), 1);
-        vrev->comment = rule_name + "(sufficient condition)";
+        vrev->comment = rule_name + "_suff";
         vspeclist.push_back(vrev);
 
         auto vfin = new VFinishedSpec;
@@ -303,7 +303,7 @@ void Env::end_parsing_a_rule()
 
         vfin->pre = new VUnExpr("~", new VBinExpr("==>", reduce(rev_ante, "&&"), reduce(rev_nece, "&&"), 1), 1);
         vfin->post = new VStrExpr("true");
-        vfin->comment = rule_name + "(necessary condition)";
+        vfin->comment = rule_name + "_nece";
         vspeclist.push_back(vfin);
     }
 }

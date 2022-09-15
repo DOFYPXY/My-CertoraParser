@@ -1,0 +1,3 @@
+// heal_revert_suff
+vars: uint256 dai, uint256 sin, uint256 vice, uint256 debt, bool revert1, bool revert2, bool revert3, bool revert4, bool revert5
+spec: reverted(Vat.heal(rad), (((dai = (dai(sender))) && (sin = (sin(sender))) && (vice = (vice())) && (debt = (debt())) && (revert1 = (value > 0)) && (revert2 = (dai < rad)) && (revert3 = (sin < rad)) && (revert4 = (vice < rad)) && (revert5 = (debt < rad))) ==> ((revert1) && (revert2) && (revert3) && (revert4) && (revert5))))

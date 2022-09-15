@@ -1,0 +1,3 @@
+// move_revert_nece
+vars: bool wish, uint256 daiSrc, uint256 daiDst, bool revert1, bool revert2, bool revert3, bool revert4
+spec: finished(Vat.move(src, dst, rad), (~(((wish = (src = sender || can(src,sender) = 1)) && (daiSrc = (dai(src))) && (daiDst = (dai(dst))) && (revert1 = (value > 0)) && (revert2 = (!wish)) && (revert3 = (daiSrc < rad)) && (revert4 = (src != dst && daiDst + rad > max_uint256))) ==> (revert1 || revert2 || revert3 || revert4))) |=> true)

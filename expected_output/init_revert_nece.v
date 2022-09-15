@@ -1,0 +1,3 @@
+// init_revert_nece
+vars: uint256 Art, uint256 rate, uint256 spot, uint256 line, uint256 dust, uint256 ward, bool revert1, bool revert2, bool revert3
+spec: finished(Vat.init(ilk), (~(((Art = (ilks(ilk).0)) && (rate = (ilks(ilk).1)) && (spot = (ilks(ilk).2)) && (line = (ilks(ilk).3)) && (dust = (ilks(ilk).4)) && (ward = (wards(sender))) && (revert1 = (value > 0)) && (revert2 = (ward != 1)) && (revert3 = (rate != 0))) ==> (revert1 || revert2 || revert3))) |=> true)

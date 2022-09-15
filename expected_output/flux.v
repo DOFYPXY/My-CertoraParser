@@ -1,0 +1,3 @@
+// flux
+vars: bytes32 otherIlk, address otherUsr, uint256 gemSrcBefore, uint256 gemDstBefore, uint256 gemOtherBefore, uint256 gemSrcAfter, uint256 gemDstAfter, uint256 gemOtherAfter
+spec: finished(Vat.flux(ilk, src, dst, wad), (otherIlk != ilk || (otherUsr != src && otherUsr != dst)) |=> (((gemSrcBefore = old(gem(ilk,src))) && (gemDstBefore = old(gem(ilk,dst))) && (gemOtherBefore = old(gem(otherIlk,otherUsr))) && (gemSrcAfter = (gem(ilk,src))) && (gemDstAfter = (gem(ilk,dst))) && (gemOtherAfter = (gem(otherIlk,otherUsr)))) ==> ((src != dst ==> gemSrcAfter = gemSrcBefore - wad) && (src != dst ==> gemDstAfter = gemDstBefore + wad) && (src = dst ==> gemSrcAfter = gemDstBefore) && (gemOtherAfter = gemOtherBefore))))
